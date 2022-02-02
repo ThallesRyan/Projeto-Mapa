@@ -8,7 +8,8 @@
 	<title>Objetivo - Arnia: Part 1</title>
 </head>
 
- <body> <!-- onload="aoAbrir()"> -->
+<body>
+	<!-- onload="aoAbrir()"> -->
 	<script type="text/javascript">
 
 		var olMap = null;
@@ -34,14 +35,14 @@
 
 		// // function aoAbrir() {
 		// // 	const apiKey = "77474b92ad49cef81948263cf3ca9477"
-	
+
 
 		// // 	const ip = '187.72.14.228'
 		// // 	const api = `https://ip.city/api.php?ip=187.72.14.228&key=77474b92ad49cef81948263cf3ca9477`
 
 		// // }
 
-		function pesquisarCordenadas(){
+		function pesquisarCordenadas() {
 			let texto = document.getElementById('TextArea').value
 			let objeto = JSON.parse(texto);
 			console.log(objeto.IP)
@@ -53,6 +54,15 @@
 			console.log(document.getElementById('frame').setAttribute("src", api))
 		}
 
+		function cordenadas(){
+			let dados = document.getElementById('dadosIp').value
+			let objeto = JSON.parse(dados)
+			console.log(objeto.long)
+			console.log(objeto.lat)
+
+			document.getElementById("idLon").value = objeto.long
+			document.getElementById("idLat").value = objeto.lat
+		}
 	</script>
 
 	<div id="menu">
@@ -64,26 +74,28 @@
 			<br>
 			<button type="button" id="idChangeLayer" onClick="changeLayer()">Alterar Camada</button>
 			<br>
-			
-				<form action="http://satelier.dynu.net/psgfdemo/Argow/action_g_arnia" method="get" target="mostraIp">
-				<!-- form action="http://localhost:59599/Argow/action_g_arnia" method="get" target="_blank" -->	
-					<!--<input type= "text" id="nome2" name="nome" value="Thalles">-->
-					<!--<input type= "password" id="senha2" name="senha" value="">-->				
-					<input type="submit" value= "Pegar IP">
-				</form>
-			
+
+			<form action="http://satelier.dynu.net/psgfdemo/Argow/action_g_arnia" method="get" target="mostraIp">
+				<!-- form action="http://localhost:59599/Argow/action_g_arnia" method="get" target="_blank" -->
+				<!--<input type= "text" id="nome2" name="nome" value="Thalles">-->
+				<!--<input type= "password" id="senha2" name="senha" value="">-->
+				<input type="submit" value="Pegar IP">
+			</form>
+
 			<br>
 			<iframe style="height: 100px; width: 500px;" name="mostraIp"></iframe>
 			<br>
 			<textarea onchange="pesquisarCordenadas()" id="TextArea" style="width: 500px; height: 100px;"></textarea>
-			
-					
-				</form>
-				
-				<br>
 
-				<iframe style="height: 100px; width: 500px;" name="" id="frame"></iframe>
-				<br>
+
+			</form>
+
+			<br>
+
+			<iframe style="height: 100px; width: 500px;" name="" id="frame"></iframe>
+			<br>
+			<textarea onchange="cordenadas()" id="dadosIp" style="height: 100px; width: 500px;"></textarea>
+			<br>
 			<button type="button" id="idOpenGps" onClick="openGps()" disabled>GPS</button>
 		</div>
 
@@ -110,7 +122,8 @@
 		<footer>
 		</footer>
 
-
+<style>
+</style>
 </body>
 
 </html>
