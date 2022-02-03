@@ -79,7 +79,7 @@
 			fetchDataAsync(url)
 				.then(dados => {
 					const nomes = dados.map(dados => dados.nome).map(dados => dados.abreviado)
-					
+
 
 					// document.getElementById('selectPaises').inser
 					// document.getElementById('op2').innerHTML = nomes[0].abreviado
@@ -88,7 +88,7 @@
 					console.log(nomes)
 					nomes.sort()
 					console.log(nomes)
-					
+
 
 					nomes.forEach(item => {
 						addOption(item)
@@ -128,7 +128,7 @@
 			<br>
 			<iframe style="height: 100px; width: 500px;" name="mostraIp"></iframe>
 			<br>
-			<textarea onchange="pesquisarCordenadas()" id="TextArea" style="width: 500px; height: 100px;"></textarea>
+			<textarea onchange="pesquisarCordenadas()" id="TextArea" style="width: 500px; height: 100px;" placeholder="Coloque o IP aqui"></textarea>
 
 
 			</form>
@@ -137,13 +137,13 @@
 
 			<iframe style="height: 100px; width: 500px;" name="" id="frame"></iframe>
 			<br>
-			<textarea onchange="cordenadas()" id="dadosIp" style="height: 100px; width: 500px;"></textarea>
+			<textarea onchange="cordenadas()" id="dadosIp" style="height: 100px; width: 500px;" placeholder="Coloque os dados aqui"></textarea>
 			<br>
 			<br>
 			<div>
 				<select id="selectPaises">
 					<option id="op1" value="">Países</option>
-					
+
 
 				</select>
 				<button id="botaoPaises" onclick="gerarPaises()">Gerar Países</button>
@@ -177,18 +177,44 @@
 		</footer>
 
 		<style>
-			#selectPaises{
-				min-width:200px;
+			#selectPaises {
+				min-width: 200px;
 				max-width: 200px;
 				background-color: darkcyan;
 				color: white;
 				text-align: center;
+				margin-left: 96px;
 			}
-			#botaoPaises{
+
+			#botaoPaises {
 				background-color: darkcyan;
 				color: white;
 			}
+			iframe{
+				background-color: rgba(0, 139, 139,0.3);
+				
+			}
+			textarea{
+				color: white;
+				background-color:rgb(73, 201, 201); 
+			}
+
+			::placeholder{
+				color: white;
+			}
+			#idLon, #idLat{
+				background-color: darkcyan;
+				color: white;
+				text-align: center;
+				margin-left: 52px;
+			}
+			#idLat{
+				margin-left: 61px;
+			}
+
+		
 		</style>
+
 </body>
 
 </html>
