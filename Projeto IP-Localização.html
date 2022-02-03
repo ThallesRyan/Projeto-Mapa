@@ -67,16 +67,42 @@
 		}
 
 		function gerarPaises() {
-			const apiPaises = `https://servicodados.ibge.gov.br/api/v1/paises`
+			const url = `https://servicodados.ibge.gov.br/api/v1/paises`
 
-			let p1 = new Promise(function (resolve, reject) {
-				resolve(fetch(apiPaises))
-				// or
-				// reject ("Error!");
-			});
-			
-				p1.then(res => JSON.parse(res))
-				.then(console.log(res))
+
+
+			async function fetchDataAsync(url) {
+				const response = await fetch(url);
+				return await response.json();
+			}
+
+			fetchDataAsync(url)
+				.then(dados => {
+					const nomes = dados.map(dados => dados.nome).map(dados => dados.abreviado)
+					
+
+					// document.getElementById('selectPaises').inser
+					// document.getElementById('op2').innerHTML = nomes[0].abreviado
+					// document.getElementById('op2').value = nomes[0].abreviado
+
+					console.log(nomes)
+					nomes.sort()
+					console.log(nomes)
+					
+
+					nomes.forEach(item => {
+						addOption(item)
+					})
+
+					function addOption(valor) {
+						var option = new Option(valor, valor);
+						var select = document.getElementById("selectPaises");
+						select.add(option);
+					}
+				})
+
+
+
 
 
 		}
@@ -115,11 +141,12 @@
 			<br>
 			<br>
 			<div>
-				<select>
-					<option value="">Países</option>
+				<select id="selectPaises">
+					<option id="op1" value="">Países</option>
+					
 
 				</select>
-				<button onclick="gerarPaises()">Gerar Países</button>
+				<button id="botaoPaises" onclick="gerarPaises()">Gerar Países</button>
 			</div>
 			<br>
 			<br>
@@ -150,6 +177,17 @@
 		</footer>
 
 		<style>
+			#selectPaises{
+				min-width:200px;
+				max-width: 200px;
+				background-color: darkcyan;
+				color: white;
+				text-align: center;
+			}
+			#botaoPaises{
+				background-color: darkcyan;
+				color: white;
+			}
 		</style>
 </body>
 
