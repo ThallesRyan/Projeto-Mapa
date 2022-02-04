@@ -1,0 +1,65 @@
+#selectPaises {
+    min-width: 200px;
+    max-width: 200px;
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    margin-left: 96px;
+}
+
+#botaoPaises {
+    background-color: darkcyan;
+    color: white;
+}
+iframe{
+    background-color: rgba(0, 139, 139,0.3);
+    
+}
+textarea{
+    color: white;
+    background-color:rgb(73, 201, 201); 
+    font-size: 20px;
+}
+
+::placeholder{
+    color: white;
+}
+#idLon, #idLat{
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+    margin-left: 0px;
+}
+#idLat{
+    margin-left: 0px;
+}
+#longText{
+    margin-left: 70px;
+}
+
+#latText{
+    margin-left: 79px;
+}
+
+#idDoMap{
+    margin-left: 200px;
+    margin-top: 5px;
+    background-color: darkcyan;
+    color: white;
+}
+#idChangeLayer{
+    margin-left: 195px;
+    margin-top: 5px;
+    background-color: darkcyan;
+    color: white;
+}
+#botaoIP{
+    margin-left: 216px;
+    margin-top: 5px;
+    background-color: darkcyan;
+    color: white;
+}
+#logo{
+    margin-left: 180px;
+    
+}
