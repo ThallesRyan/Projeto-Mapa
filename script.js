@@ -91,5 +91,6 @@ function gerarPaises() {
 }
 
 function cordenadasPais() {
-    const paises = 'http://www.geognos.com/api/en/countries/info/all.json'
+
+
 }
