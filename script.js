@@ -39,7 +39,7 @@ function pesquisarCordenadas() {
     const ip = objeto.IP
     const api = `https://ip.city/api.php?ip=${ip}&key=${apiKey}`
 
-    
+
 
     console.log(document.getElementById('frame').setAttribute("src", api))
 }
@@ -82,15 +82,37 @@ function gerarPaises() {
 
             function addOption(valor) {
                 var option = new Option(valor, valor);
+                // option.id = "323423"
                 var select = document.getElementById("selectPaises");
                 select.add(option);
-                // console.log(select)
-
+                
             }
+            
         })
+
+        console.log(document.getElementById("selectPaises"))
 }
 
 function cordenadasPais() {
 
-    
+    fetch("./paises.json")
+        .then(response => {
+            return response.json()
+        })
+        .then(jsondata => {console.log(jsondata)
+            let paises = jsondata.Results
+            
+            //Checkpoint: colocar os dados na option select e ao selecionar, colocar a lat e long nos campos
+            //Passar a sigla do país como id da option
+            for(let atributo in paises){
+                console.log(`${atributo} = ${paises[atributo].Name}`)
+            }
+            console.log(paises)
+            
+        })
+        
+        
+
 }
+
+
