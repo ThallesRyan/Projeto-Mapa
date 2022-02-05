@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="cordenadasPais()">
 	<!-- onload="aoAbrir()"> -->
 	
 
@@ -47,12 +47,11 @@
 			<br>
 			<br>
 			<div>
-				<select id="selectPaises">
-					<option id="op1" value="">Países</option>
+				<select id="selectPaises" onclick="getOption(this)">
+					<option id="op1" value="semValor">Países</option>
 
 
 				</select>
-				<button id="botaoPaises" onclick="cordenadasPais()" ondblclick="cordenadasPais()">Gerar Países</button>
 			</div>
 			<br>
 			<br>

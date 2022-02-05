@@ -85,12 +85,12 @@ function gerarPaises() {
                 // option.id = "323423"
                 var select = document.getElementById("selectPaises");
                 select.add(option);
-                
+
             }
-            
+
         })
 
-        console.log(document.getElementById("selectPaises"))
+    console.log(document.getElementById("selectPaises"))
 }
 
 function cordenadasPais() {
@@ -99,20 +99,51 @@ function cordenadasPais() {
         .then(response => {
             return response.json()
         })
-        .then(jsondata => {console.log(jsondata)
+        .then(jsondata => {
+            console.log(jsondata)
             let paises = jsondata.Results
-            
             //Checkpoint: colocar os dados na option select e ao selecionar, colocar a lat e long nos campos
             //Passar a sigla do país como id da option
-            for(let atributo in paises){
-                console.log(`${atributo} = ${paises[atributo].Name}`)
-            }
-            console.log(paises)
-            
-        })
-        
-        
+            for (let atributo in paises) {
+                //console.log(`${atributo} = ${paises[atributo].Name}`)
 
+
+                let option = new Option(paises[atributo].Name, atributo);
+                option.id = paises[atributo].Name
+                let select = document.getElementById("selectPaises");
+                select.add(option);
+
+            }
+            // console.log(paises)
+            console.log(document.getElementById("selectPaises"))
+
+            // console.log(paises)
+
+        })
 }
+
+const getOption = ObjectSelect => {
+    var value = ObjectSelect.value;
+    if(value !== "semValor"){
+        fetch("./paises.json")
+            .then(response => {
+                return response.json()
+            }).then(jsondata =>{
+                
+                var dados = jsondata.Results
+                
+                console.log(dados[value])
+                console.log(dados[value].GeoPt)
+                let lat = dados[value].GeoPt[0]
+                let long = dados[value].GeoPt[1]
+                console.log(lat, long)
+                
+                document.getElementById("idLon").value = long
+                document.getElementById("idLat").value = lat
+            }) 
+    }        
+}
+
+
 
 
