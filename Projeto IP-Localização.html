@@ -8,6 +8,8 @@
 	<title>Objetivo - Arnia: Part 1</title>
 
 	<link rel="stylesheet" href="style.css">
+	<script src="./api/ol.js"></script>
+	<link type="text/css" href="./api/ol.css" rel="stylesheet" />
 </head>
 
 <body onload="cordenadasPais()">
@@ -18,8 +20,7 @@
 		<div>
 			<img src="logo.png" alt="Arnia" id="logo">
 			<br>
-			<button type="button" id="idDoMap" onClick="doMap()">Mostrar mapa</button>
-
+			<button type="button" id="idDoMap" onclick="doMap()">Mostrar mapa</button>
 			<br>
 			<button type="button" id="idChangeLayer" onClick="changeLayer()">Alterar Camada</button>
 			<br>
@@ -63,16 +64,16 @@
 	<div id="dados">
 		<div id="entrada">
 			<span class="input-label" id="longText">Longitude</span>
-			<input type="text" id="idLon" name="idLon" value='-43.9360313'><br>
+			<input type="text" id="idLon" name="idLon" value='0'><br>
 			<span class="input-label" id="latText">Latidude</span>
-			<input type="text" id="idLat" name="idLat" value='-19.9315584'>
+			<input type="text" id="idLat" name="idLat" value='0'>
 		</div>
 
 
 		<div id="mapa">
-			<!--
+			
                 <div id="idMapViewPort" style="width: 90%; min-width: 200px; height: 600px"> </div>
-			-->
+			
 			<img id="idMapViewPort" src='mapa.png' hidden>
 
 		</div>
