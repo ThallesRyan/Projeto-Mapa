@@ -168,6 +168,7 @@ const getOption = ObjectSelect => {
 		}
 		// Todo: documentar
 		function doMap() {  // https://openlayers.org/en/latest/examples/bing-maps.html
+			document.getElementById('idDoMap').disabled = true
 			let olLayers = [];
 
 			let olTileBing = new ol.layer.Tile({
@@ -219,6 +220,7 @@ const getOption = ObjectSelect => {
 				map: olMap,
 				source: new ol.source.Vector({ features: [gpsInfo.feature], }),
 			});
+
 		}
 		/** Disable/enable an element
 		 * @param {Array} aCenter Map Coordinates in 'EPSG:3857'; https://openlayers.org/en/latest/apidoc/module-ol_View-View.html#setCenter

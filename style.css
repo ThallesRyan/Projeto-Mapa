@@ -19,6 +19,8 @@ textarea{
     color: white;
     background-color:rgb(73, 201, 201); 
     font-size: 20px;
+    max-width: 500px;
+    max-height: 100px;
 }
 
 ::placeholder{
@@ -29,9 +31,11 @@ textarea{
     color: white;
     text-align: center;
     margin-left: 0px;
+    
 }
 #idLat{
     margin-left: 0px;
+    margin-bottom: 10px;
 }
 #longText{
     margin-left: 70px;
@@ -62,4 +66,25 @@ textarea{
 #logo{
     margin-left: 180px;
     
+}
+#idCenterMap{
+    margin-left: 210px;
+    margin-top: 5px;
+    background-color: darkcyan;
+    color: white;
+}
+#idOpenGps{
+    margin-left: 228px;
+    margin-top: 5px;
+    background-color: darkcyan;
+    color: white;
+    margin-bottom: 10px;
+}
+
+*{
+    border-radius: 10px;
+}
+
+#idDoMap:disabled{
+    background-color: rgb(143, 204, 204);
 }

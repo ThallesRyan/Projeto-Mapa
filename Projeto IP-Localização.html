@@ -31,6 +31,9 @@
 				<!--<input type= "password" id="senha2" name="senha" value="">-->
 				<input type="submit" value="Pegar IP" id="botaoIP">
 			</form>
+			<button type="button" id="idCenterMap" onclick="centerMap()">Centralizar</button>
+			<br>
+			<button type="button" id="idOpenGps" onclick="gpsOpen()">GPS</button>		
 
 			<br>
 			<iframe style="height: 100px; width: 500px;" name="mostraIp"></iframe>
@@ -55,10 +58,9 @@
 				</select>
 			</div>
 			<br>
-			<br>
-			<button type="button" id="idOpenGps" onClick="openGps()" disabled>GPS</button>
-		</div>
 
+			<br>
+		</div>
 	</div>
 
 	<div id="dados">
