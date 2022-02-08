@@ -221,6 +221,9 @@ const getOption = ObjectSelect => {
 				source: new ol.source.Vector({ features: [gpsInfo.feature], }),
 			});
 
+			
+			
+
 		}
 		/** Disable/enable an element
 		 * @param {Array} aCenter Map Coordinates in 'EPSG:3857'; https://openlayers.org/en/latest/apidoc/module-ol_View-View.html#setCenter
@@ -242,25 +245,35 @@ const getOption = ObjectSelect => {
 		// TODO:
 		function changeLayer() {
 			// cSpell: word visivel
+			const nome= 'nome';
+			olTileBing.set(nome, 'Bing')
+			olTileOtm.set(nome, 'OpenTopo')
+			olTileOsm.set(nome, 'OSM')
+
+
+			// cSpell: word visivel
 			let olListaLayers = [];
 			let iVisivel = -1;
 			function processa(olLayer) {
 				let bVisivel = olLayer.getVisible();
-				if ((bVisivel) && (iVisivel < 0)) { iVisivel = olListaLayers.length; }
+				if ((bVisivel) && (iVisivel < 0)) { iVisivel = olListaLayers.length}
 				olListaLayers.push(olLayer);
 				console.log(olLayer.get(nome) + ' visível: ' + olLayer.getVisible());
+				olLayer.setVisible(false)
 			}
 
 			olMap.getLayers().forEach(processa);
 
 			try {
 				// mudar visible a próxima
-				let a = EsteDaErro;
+				iVisivel++
+				olListaLayers[((iVisivel >= olListaLayers.length)? 0 : iVisivel)].setVisible(true)
+				
 				console.log('Visivel mudado para xxx');
 			} catch (e) {  // Se ocorrer um erro não previsto, voltar com o layer que já era visivel.
 				console.error( /*TODO*/ e.message);
 				if (iVisivel >= 0) {
-					olListaLayers[iVisivel].getVisible(iVisivel);
+					olListaLayers[iVisivel].setVisible(true);
 				}
 			}
 			// cSpell: word visivel

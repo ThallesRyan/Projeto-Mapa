@@ -46,39 +46,42 @@ textarea{
 }
 
 #idDoMap{
-    margin-left: 200px;
+
     margin-top: 5px;
     background-color: darkcyan;
     color: white;
 }
 #idChangeLayer{
-    margin-left: 195px;
+    
     margin-top: 5px;
     background-color: darkcyan;
     color: white;
 }
 #botaoIP{
-    margin-left: 216px;
+    
     margin-top: 5px;
     background-color: darkcyan;
     color: white;
+    width: 213px;
+    
 }
 #logo{
     margin-left: 180px;
     
 }
 #idCenterMap{
-    margin-left: 210px;
+    margin-left: 2px;
     margin-top: 5px;
     background-color: darkcyan;
     color: white;
 }
 #idOpenGps{
-    margin-left: 228px;
+    
     margin-top: 5px;
     background-color: darkcyan;
     color: white;
     margin-bottom: 10px;
+    width: 213px;
 }
 
 *{
@@ -88,3 +91,6 @@ textarea{
 #idDoMap:disabled{
     background-color: rgb(143, 204, 204);
 }
+
+
+

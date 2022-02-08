@@ -21,9 +21,9 @@
 			<img src="logo.png" alt="Arnia" id="logo">
 			<br>
 			<button type="button" id="idDoMap" onclick="doMap()">Mostrar mapa</button>
-			<br>
-			<button type="button" id="idChangeLayer" onClick="changeLayer()">Alterar Camada</button>
-			<br>
+			
+			<button type="button" id="idChangeLayer" onclick="changeLayer()">Alterar Camada</button>
+			
 
 			<form action="http://satelier.dynu.net/psgfdemo/Argow/action_g_arnia" method="get" target="mostraIp">
 				<!-- form action="http://localhost:59599/Argow/action_g_arnia" method="get" target="_blank" -->
@@ -31,8 +31,8 @@
 				<!--<input type= "password" id="senha2" name="senha" value="">-->
 				<input type="submit" value="Pegar IP" id="botaoIP">
 			</form>
-			<button type="button" id="idCenterMap" onclick="centerMap()">Centralizar</button>
-			<br>
+			
+			
 			<button type="button" id="idOpenGps" onclick="gpsOpen()">GPS</button>		
 
 			<br>
@@ -53,9 +53,8 @@
 			<div>
 				<select id="selectPaises" onclick="getOption(this)">
 					<option id="op1" value="semValor">Países</option>
-
-
 				</select>
+				<button type="button" id="idCenterMap" onclick="centerMap()">Centralizar</button>
 			</div>
 			<br>
 
@@ -74,7 +73,7 @@
 
 		<div id="mapa">
 			
-                <div id="idMapViewPort" style="width: 90%; min-width: 200px; height: 600px"> </div>
+                <div id="idMapViewPort" style="width: 90%; min-width: 500px;max-width: 500px; height: 600px"> </div>
 			
 			<img id="idMapViewPort" src='mapa.png' hidden>
 
